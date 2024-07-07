@@ -1,0 +1,182 @@
+@layer reset, base, component;
+@font-face {
+  font-family: "Inter";
+  src: url("./assets/fonts/static/Inter-Regular.ttf");
+  font-weight: 400;
+}
+@font-face {
+  font-family: "Inter";
+  src: url("./assets/fonts/static/Inter-SemiBold.ttf");
+  font-weight: 600;
+}
+@font-face {
+  font-family: "Inter";
+  src: url("./assets/fonts/static/Inter-Bold.ttf");
+  font-weight: 700;
+}
+@layer reset {
+  html {
+    box-sizing: border-box;
+  }
+  *,
+  *:before,
+  *:after {
+    box-sizing: inherit;
+    margin: 0;
+    padding: 0;
+    line-height: calc(1em + 0.5rem);
+    vertical-align: baseline;
+  }
+
+  body {
+    -webkit-font-smoothing: antialiased;
+    line-height: 1;
+  }
+  a,
+  a:visited,
+  a:hover,
+  a:active {
+    text-decoration: none;
+    color: currentColor;
+  }
+  img,
+  picture,
+  video,
+  canvas,
+  svg {
+    display: block;
+    max-width: 100%;
+  }
+  input,
+  button,
+  textarea,
+  select {
+    font: inherit;
+    font-size: 1.6rem;
+  }
+  p,
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6 {
+    overflow-wrap: break-word;
+  }
+
+  p {
+    overflow-wrap: break-word;
+    hyphens: auto;
+  }
+  ol,
+  ul {
+    list-style: none;
+  }
+}
+@layer base {
+  :root {
+    --green: hsl(75, 94%, 57%);
+    --white: hsl(0, 0%, 100%);
+    --grey: hsl(0, 0%, 20%);
+    --dark-grey: hsl(0, 0%, 12%);
+    --black: hsl(0, 0%, 8%);
+  }
+  html {
+    font-size: 62.5%;
+  }
+
+  main {
+    container-name: inline-size;
+    background-color: var(--black);
+    min-height: 100dvh;
+    display: grid;
+    place-items: center;
+    font-family: "Inter", sans-serif;
+    padding: 4rem 0;
+  }
+}
+
+@layer component {
+  .card {
+    max-width: 37rem;
+    background-color: var(--dark-grey);
+    padding: 2rem;
+    border-radius: 1rem;
+    color: var(--white);
+  }
+  .card-header {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 2rem;
+  }
+  .card-img {
+    width: 7rem;
+    height: 7rem;
+    border-radius: 50%;
+    object-fit: cover;
+  }
+  .card-body {
+    text-align: center;
+    margin-bottom: 2rem;
+  }
+  .author-info {
+    margin-bottom: 2rem;
+  }
+  .author-name {
+    font-size: 2.5rem;
+  }
+  .author-address {
+    font-size: 1.6rem;
+    color: var(--green);
+  }
+  .author-job {
+    font-size: 1.4rem;
+  }
+
+  .author-socials {
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+  }
+  .author-socials-item {
+    display: flex;
+    width: 100%;
+    justify-content: center;
+    align-items: center;
+    padding: 1rem 4rem;
+    font-size: 1.5rem;
+    font-weight: 600;
+    background-color: var(--grey);
+    border-radius: 0.4rem;
+    transition-property: background-color, color;
+    transition-duration: 0.3s;
+    transition-timing-function: ease-in-out;
+    cursor: pointer;
+    &:hover {
+      background-color: var(--green);
+      color: var(--black);
+    }
+  }
+  .attribution {
+    margin-top: 2rem;
+    font-size: 1.1rem;
+    text-align: center;
+    color: var(--white);
+  }
+  .attribution a {
+    color: var(--green);
+  }
+  @media (37.5rem < width) {
+    .card {
+      max-width: 40rem;
+      width: 100%;
+      padding: 3rem;
+      border-radius: 2rem;
+    }
+    .card-img {
+      width: 10rem;
+      height: 10rem;
+    }
+  }
+}
